@@ -3,18 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>Curso jQuery Fundamental</title>
-        
+
         <style>
 			body 	{ font-family:Arial, Helvetica, sans-serif; font-size:0.8em; }
 			ul 		{ margin:0; padding:0; list-style:none; width:200px }
 			li		{ margin-bottom:5px }
-			li a	{ padding:10px 6px; color:#39C; text-decoration:none } 
+			li a	{ padding:10px 6px; color:#39C; text-decoration:none }
         </style>
 
-		<script src="jquery-3.2.1.min.js"></script>
+		<script src="jquery-3.3.1.min.js"></script>
         <script>
 			$( function(e) {
-	
+	            $("li a[href$='.pdf']").before("<img scr='imagens/icon_pdf.gif'>") // after or before |
+                $("li a[href$='.zip']").before("<img scr='imagens/icon_zip.gif'>")
             });
 		</script>
     </head>
@@ -26,7 +27,7 @@
             <li><a href="arquivo.zip">Arquivo zipado</a></li>
             <li><a href="arquivo.pdf">Documento de Texto</a></li>
             <li><a href="arquivo.pdf">Curriculum Vitae</a></li>
-			<li><a href="arquivo.zip">Arquivo para download</a></li>            
+			<li><a href="arquivo.zip">Arquivo para download</a></li>
         </ul>
     </body>
 </html>

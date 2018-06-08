@@ -3,19 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <title>Curso jQuery Fundamental</title>
-        
-        <script src="jquery-3.2.1.min.js"></script>
+
+        <script src="jquery-3.3.1.min.js"></script>
         <script>
 			$( function(e) {
-		
+                $("a#fotogrande").attr("title", "Alpes Suíços")
+                $("a#fotogrande").attr("target", "blank")
+                $("a#fotogrande").removeAttr("target")
 			} )
 		</script>
-        
+
     </head>
 
     <body>
-    	
-    	<a href="imagem/foto6_grande.jpg"><img src="imagem/foto6.jpg"></a>
+
+    	<a href="imagem/foto6_grande.jpg" id="fotogrande"><img src="imagem/foto6.jpg"></a>
 
     </body>
 

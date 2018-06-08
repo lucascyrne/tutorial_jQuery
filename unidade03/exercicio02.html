@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Curso jQuery Fundamental</title> 
+        <title>Curso jQuery Fundamental</title>
     </head>
 
     <body>
@@ -12,14 +12,19 @@
             <a href="#">Uruguai</a>
             <a href="#">Chile</a>
         </nav>
-        
+
+        <a href="#">Paraguai</a>
 		<!-- scripts -->
-        <script src="jquery-3.2.1.min.js"></script>
-        <script>    
-        	$( function() {
-				
-			})
-        </script>   
-                
+        <script src="jquery-3.3.1.min.js"></script>
+        <script>
+            // alert("Essa página contém " + $("nav a").length + " links.");
+            $(function() {
+                $("nav a").css("text-decoration", "red").css("display", "block");
+                $("nav a:nth(1)").css("color", "green");
+                $("nav a:contains('Chile')").css("color", "pink");
+                $("nav a:first").css("color", "red");
+            })
+        </script>
+
     </body>
 </html>

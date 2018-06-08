@@ -2,27 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Curso jQuery Fundamental</title> 
-        
-        <script src="jquery-3.2.1.min.js"></script>
+        <title>Curso jQuery Fundamental</title>
+
+        <script src="jquery-3.3.1.min.js"></script>
         <script>
 			$(function(e) {
-				
+				$("li:last").remove();
+                $("li:first").remove();
+                $("li.específico").remove();
+                $("li:last").replaceWith("<li>Curso de Bootstrap</li>")
+                $("ul").wrapAll("<div style='border: 1px solid black'></div>") // wrapAll (fora) wrapInner (dentro)
 			})
-		</script>        
+		</script>
     </head>
 
     <body>
-    	
-      
+
+
 		<ul>
-        		
+
             <li>Curso HTML5 Essencial</li>
             <li>Curso CSS3 Essencial</li>
-            <li>Curso Javascript Essencial</li>
+            <li class="específico">Curso Javascript Essencial</li>
             <li>Curso jQuery Fundamental</li>
         </ul>
-        
+
     </body>
 
 </html>
