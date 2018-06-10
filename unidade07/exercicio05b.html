@@ -17,13 +17,23 @@
             #janela img {
                 float: left;
             }
-            
+
+            #info {
+                position: absolute; top:300px;
+            }
+
 		</style>
 
         <script src="jquery-3.3.1.min.js"></script>
         <script>
 			function moverFotos() {
-                $('#janela').animate({left:"-=200"}, 1000)
+                $('#janela').animate({left:"-=200"}, 1000, function(e) {
+                    $('#info').html($('#janela').position().left );
+
+                    if ( $('#janela').position().left == -800 ) {
+                        $('#janela').css('left', 0);
+                    }
+                });
             }
 
             $(function(e) {
@@ -39,8 +49,10 @@
                 <img src="imagens/foto2.jpg" alt="">
                 <img src="imagens/foto3.jpg" alt="">
                 <img src="imagens/foto4.jpg" alt="">
-                <img src="imagens/foto5.jpg" alt="">
+                <img src="imagens/foto1.jpg" alt="">
             </div>
+
+            <div id="info"></div>
         </div>
     </body>
 </html>

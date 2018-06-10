@@ -17,16 +17,36 @@
             #janela img {
                 float: left;
             }
-            
+
+            #info {
+                position: absolute; top:300px;
+            }
+
 		</style>
 
         <script src="jquery-3.3.1.min.js"></script>
         <script>
+
+            var limite;
+
 			function moverFotos() {
-                $('#janela').animate({left:"-=200"}, 1000)
+                $('#janela').animate({left:"-=200"}, 1000, function(e) {
+                    $('#info').html($('#janela').position().left );
+
+                    if ( $('#janela').position().left == limite ) {
+                        $('#janela').css('left', 0);
+                    }
+                });
             }
 
             $(function(e) {
+                limite = $('#janela img').length * $('#janela img').width() * -1;
+
+                alert(limite);
+
+                $('#janela').append('<img>')
+                $('#janela img:last').attr('src', 'imagens/foto1.jpg')
+
                 setInterval(moverFotos, 2000);
             });
 		</script>
@@ -41,6 +61,8 @@
                 <img src="imagens/foto4.jpg" alt="">
                 <img src="imagens/foto5.jpg" alt="">
             </div>
+
+            <div id="info"></div>
         </div>
     </body>
 </html>
